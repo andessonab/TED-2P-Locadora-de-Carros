@@ -1,0 +1,18 @@
+name: Compilar projeto C#
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Restaurar dependencias
+        run: dotnet restore LocadoraCarros.csproj
+      - name: Compilar
+        run: dotnet build LocadoraCarros.csproj --configuration Release --no-restore
