@@ -1,0 +1,7 @@
+# Arquivos gerados automaticamente pelo .NET e Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
