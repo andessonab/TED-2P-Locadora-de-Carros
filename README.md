@@ -78,7 +78,17 @@ No Visual Studio, também é possível abrir o arquivo `LocadoraCarros.csproj` e
 - `tests/test_console.py` – testes automáticos.
 - `.github/workflows/build.yml` – configuração da compilação e dos testes.
 
-O relatório escrito do grupo tem oito páginas e apresenta a introdução, o objetivo, o desenvolvimento, a conclusão e as capturas de execução. O PDF original foi preservado, sem alterações.
+## Relatório e capturas de tela
+
+O relatório escrito do grupo tem oito páginas e apresenta introdução, objetivo, desenvolvimento, conclusão e exemplos da execução do programa. A versão original foi mantida sem alterações.
+
+- [Abrir o relatório em PDF](docs/Relatorio_Locadora_de_Carros.pdf)
+- [Ver as capturas de tela do programa](docs/capturas/)
+- [Conferir o roteiro de testes](docs/ROTEIRO_DE_TESTES.md)
+
+### Exemplo da tela do programa
+
+![Menu e listagem de carros](docs/capturas/01-menu-e-lista.png)
 
 ## Conferência do funcionamento
 
