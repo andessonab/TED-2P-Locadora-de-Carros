@@ -1,18 +1,22 @@
-name: Compilar projeto C#
+name: Compilar e testar locadora C#
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - name: Baixar arquivos
+        uses: actions/checkout@v4
+      - name: Preparar .NET 8
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
       - name: Restaurar dependencias
         run: dotnet restore LocadoraCarros.csproj
-      - name: Compilar
+      - name: Compilar projeto
         run: dotnet build LocadoraCarros.csproj --configuration Release --no-restore
+      - name: Executar 18 testes funcionais
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
