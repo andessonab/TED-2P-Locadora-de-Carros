@@ -9,7 +9,6 @@ O relatório original do grupo foi mantido **sem alterações**, conforme a vers
 - Andesson Albano
 - Elias de Souza
 
-> Os nomes acima são os que constam no PDF original. Caso haja outro integrante, atualize a identificação no README e converse com o grupo sobre a capa do PDF original antes da entrega.
 
 ## Objetivo
 
