@@ -69,19 +69,16 @@ No Visual Studio, também é possível abrir o arquivo `LocadoraCarros.csproj` e
 6. Tente alugar o ID `5` novamente. O programa deve avisar que o carro já está alugado.
 7. Na opção **9**, devolva o carro de ID `5`.
 
-## Arquivos do projeto
+## Arquivos e documentação
 
-- `Program.cs` – código-fonte do programa.
+- `Program.cs` – código-fonte da locadora.
 - `LocadoraCarros.csproj` – configuração do projeto em C#.
-- `docs/Relatorio_Locadora_de_Carros.pdf` – relatório original do grupo, com oito páginas, sem alterações.
-- `docs/capturas/` – imagens de execução usadas como exemplos no relatório.
-- `docs/ROTEIRO_DE_TESTES.md` – situações para conferir o funcionamento.
-- `tests/test_console.py` – testes automáticos das funções do programa.
-- `.github/workflows/build.yml` – configuração da compilação e dos testes no GitHub.
+- `README.md` – apresentação do projeto e instruções para executar.
+- [Roteiro de testes](docs/ROTEIRO_DE_TESTES.md) – exemplos para conferir o funcionamento.
+- `tests/test_console.py` – testes automáticos.
+- `.github/workflows/build.yml` – configuração da compilação e dos testes.
 
-**Relatório em PDF:** [abrir relatório](docs/Relatorio_Locadora_de_Carros.pdf).
-
-**Capturas de tela:** [abrir pasta](docs/capturas/).
+O relatório escrito do grupo tem oito páginas e apresenta a introdução, o objetivo, o desenvolvimento, a conclusão e as capturas de execução. O PDF original foi preservado, sem alterações.
 
 ## Conferência do funcionamento
 
