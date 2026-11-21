@@ -1,101 +1,96 @@
-# Locadora de Carros — TED de Estruturas de Dados
+# TED – Locadora de Carros
 
-**Curso:** Sistemas de Informação — 2º período  
-**Instituição:** UNISAPIENS  
+**Curso:** Sistemas de Informação – 2º período  
+**Disciplina:** Estruturas de Dados  
 **Professora:** Rosângela  
+**Instituição:** UNISAPIENS  
 **Grupo:** 5
 
-**Integrantes:**
+**Integrantes**
 - Carlos Henrique Farias dos Santos
 - Andesson Albano
 - Elias de Souza
 
-## Sobre o projeto
+## Sobre o trabalho
 
-Neste trabalho, desenvolvemos um programa em C# para simular algumas atividades de uma locadora de carros. A ideia foi colocar em prática os conteúdos de estruturas de dados e algoritmos estudados em sala.
+Neste trabalho, fizemos um programa simples de locadora de carros em C#. A ideia foi usar os algoritmos estudados na disciplina em uma situação que fosse fácil de entender.
 
-O sistema funciona pelo console e começa com oito veículos cadastrados. É possível consultar os carros, pesquisar por modelo ou ID, organizar a lista por diferentes critérios e simular um aluguel ou uma devolução.
+O programa começa com oito carros cadastrados. Pelo menu, é possível listar os veículos, procurar um modelo ou um ID, organizar os carros por preço ou ano, encontrar o mais barato e o mais caro disponíveis, alugar e devolver um veículo.
 
-## Estrutura utilizada
+Para guardar os carros, usamos uma lista do tipo `List<Carro>`. Os dados ficam na memória enquanto o programa está aberto: ao fechar e executar novamente, os oito carros voltam à situação inicial.
 
-Os carros são armazenados em uma `List<Carro>`, que é uma estrutura de dados linear. Cada carro tem ID, marca, modelo, ano, valor da diária, situação de disponibilidade e, quando está alugado, o nome do cliente.
+## Algoritmos utilizados
 
-Escolhemos essa estrutura porque ela permite percorrer os veículos por posição e aplicar os algoritmos trabalhados na disciplina.
+| Tipo | Algoritmo | Uso no programa |
+|---|---|---|
+| Ordenação | Bubble Sort | Organiza os carros pela diária, da menor para a maior. |
+| Ordenação | Insertion Sort | Organiza os carros pelo ano, do mais antigo para o mais novo. |
+| Busca | Busca sequencial | Procura um carro pelo modelo, mesmo digitando apenas parte do nome. |
+| Busca | Busca binária | Procura um carro pelo ID. |
+| Seleção | Menor valor | Mostra o carro disponível com a diária mais barata. |
+| Seleção | Maior valor | Mostra o carro disponível com a diária mais cara. |
 
-## Algoritmos do sistema
-
-**Ordenação**
-
-- **Bubble Sort:** organiza os carros do menor para o maior valor da diária. O algoritmo compara veículos vizinhos e troca suas posições quando necessário.
-- **Insertion Sort:** organiza os carros pelo ano, do mais antigo para o mais recente, inserindo cada veículo na posição correta.
-
-Nas duas opções, usamos uma cópia da lista. Assim, os carros continuam organizados por ID na lista original, o que é importante para a busca binária.
-
-**Busca**
-
-- **Busca sequencial:** percorre a lista até encontrar os carros cujo modelo corresponde ao texto digitado. Por exemplo, é possível pesquisar por `HB20`.
-- **Busca binária:** localiza um veículo pelo ID. Ela aproveita o fato de que a lista original está em ordem crescente de ID para reduzir a quantidade de comparações.
-
-**Seleção**
-
-- **Menor diária:** percorre os carros disponíveis e escolhe aquele com o preço mais baixo.
-- **Maior diária:** faz a mesma verificação, mas escolhe o carro disponível com o preço mais alto.
+Nas duas ordenações, usamos uma cópia da lista. Assim, a lista principal continua organizada por ID, como a busca binária precisa.
 
 ## Opções do menu
 
 | Opção | O que faz |
 |---|---|
-| 1 | Lista os carros cadastrados |
-| 2 | Ordena por diária com Bubble Sort |
-| 3 | Ordena por ano com Insertion Sort |
-| 4 | Busca carros pelo modelo |
-| 5 | Busca um carro pelo ID |
-| 6 | Mostra o carro disponível mais barato |
-| 7 | Mostra o carro disponível mais caro |
-| 8 | Aluga um carro |
-| 9 | Devolve um carro |
-| 0 | Encerra o programa |
-
-Para alugar um veículo, o usuário informa o ID, o nome do cliente e a quantidade de dias. O programa verifica se o carro está disponível e calcula o total multiplicando a diária pelos dias. Depois disso, o veículo fica marcado como alugado. Na devolução, ele volta a ficar disponível.
+| 1 | Lista os carros cadastrados. |
+| 2 | Ordena por diária (Bubble Sort). |
+| 3 | Ordena por ano (Insertion Sort). |
+| 4 | Busca pelo modelo (sequencial). |
+| 5 | Busca pelo ID (binária). |
+| 6 | Mostra o carro disponível mais barato. |
+| 7 | Mostra o carro disponível mais caro. |
+| 8 | Aluga um carro. |
+| 9 | Devolve um carro. |
+| 0 | Encerra o programa. |
 
 ## Como executar
 
-É necessário ter o **.NET SDK 8** instalado no computador.
+O projeto é um aplicativo de console. Para executar, é necessário ter o **.NET 8 SDK** instalado.
 
-Abra um terminal na pasta do projeto e digite:
+No terminal, dentro da pasta do projeto, digite:
 
 ```bash
-dotnet run --project LocadoraCarros.csproj
+dotnet run
 ```
 
-O menu será exibido e você poderá escolher as opções digitando seus números.
+No Visual Studio, também é possível abrir o arquivo `LocadoraCarros.csproj` e iniciar o programa.
 
-**Exemplo para conferir o funcionamento:**
+### Exemplo de teste
 
-1. Digite `1` para listar os oito veículos.
-2. Digite `2` para visualizar a ordenação por diária e `3` para a ordenação por ano.
-3. Na opção `4`, pesquise por `HB20`. Na opção `5`, procure o ID `4`.
-4. Na opção `8`, escolha o ID `5` (Toyota Corolla), informe um nome e `15` dias. Com a diária de R$ 189,90, o total calculado será R$ 2.848,50.
-5. Tente alugar o mesmo carro novamente para conferir a mensagem de indisponibilidade. Depois, use a opção `9` para devolvê-lo.
+1. Abra a opção **1** para ver os oito carros e seus IDs.
+2. Use as opções **2** e **3** para conferir a ordenação por diária e por ano.
+3. Na opção **4**, digite `HB20` para procurar o Hyundai HB20.
+4. Na opção **5**, digite `4` para encontrar o Volkswagen Polo.
+5. Na opção **8**, escolha o carro de ID `5` (Toyota Corolla), informe o nome de um cliente e `15` dias. O valor calculado deve ser **R$ 2.848,50**.
+6. Tente alugar o ID `5` novamente. O programa deve avisar que o carro já está alugado.
+7. Na opção **9**, devolva o carro de ID `5`.
 
-## Testes e arquivos
+## Arquivos do projeto
 
-O projeto foi compilado com **.NET 8** no GitHub Actions. Também foram executados **18 testes automáticos**, que verificam as principais opções do menu, incluindo buscas, ordenações, seleção, aluguel, devolução e tratamento de entradas inválidas.
+- `Program.cs` – código-fonte do programa.
+- `LocadoraCarros.csproj` – configuração do projeto em C#.
+- `docs/Relatorio_Locadora_de_Carros.pdf` – relatório original do grupo, com oito páginas, sem alterações.
+- `docs/capturas/` – imagens de execução usadas como exemplos no relatório.
+- `docs/ROTEIRO_DE_TESTES.md` – situações para conferir o funcionamento.
+- `tests/test_console.py` – testes automáticos das funções do programa.
+- `.github/workflows/build.yml` – configuração da compilação e dos testes no GitHub.
 
-O código e os testes podem ser consultados nestes arquivos:
+**Relatório em PDF:** [abrir relatório](docs/Relatorio_Locadora_de_Carros.pdf).
 
-- `Program.cs` — classes, algoritmos e funcionamento do menu.
-- `LocadoraCarros.csproj` — configuração do projeto C#.
-- `tests/test_console.py` — testes automáticos de execução.
-- `docs/ROTEIRO_DE_TESTES.md` — situações que podem ser testadas manualmente.
-- `.github/workflows/build.yml` — configuração da compilação e dos testes no GitHub.
+**Capturas de tela:** [abrir pasta](docs/capturas/).
 
-Os resultados da compilação e dos testes ficam disponíveis na aba **Ações** do repositório.
+## Conferência do funcionamento
 
-## Considerações finais
+Além dos testes manuais apresentados no relatório, configuramos uma verificação pelo GitHub Actions. Ela compila o programa com .NET 8 e executa **18 testes automáticos**, incluindo busca, ordenação, aluguel e devolução.
 
-Com o desenvolvimento do sistema, conseguimos observar a diferença entre ordenar, buscar e selecionar informações dentro de uma mesma lista. Também vimos por que a organização dos dados faz diferença: a busca binária, por exemplo, depende de os IDs estarem em ordem.
+O resultado pode ser visto na aba **Ações** do repositório.
 
-O programa é uma simulação para a disciplina. Os dados ficam na memória enquanto ele está aberto, portanto os aluguéis não são salvos quando o sistema é fechado. Um próximo passo seria acrescentar cadastro de novos carros e armazenamento dos dados em arquivo.
+## Conclusão
 
-**O relatório completo em PDF, com as explicações e as capturas de tela, será entregue separadamente na plataforma da disciplina.**
+O projeto ajudou a entender como uma lista pode ser usada junto com diferentes algoritmos. Também mostrou uma diferença importante: ordenar por preço ou por ano não significa que podemos usar a busca binária nessa mesma ordem. Por isso, mantivemos a lista principal organizada pelo ID e fizemos as ordenações em cópias.
+
+O programa é uma simulação para a disciplina, sem banco de dados ou histórico permanente de aluguéis. Essas seriam possibilidades para uma versão futura.
